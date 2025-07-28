@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--beans tag validate the bean tag created inside it, bean tags are storeed inside the spring-beans.xsd  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here     we have to give file location as follows -->
+    
+    
+    <bean id="sim"
+		class="inversionofcontrol.Vodafone"></bean>
+    
+
+</beans>
