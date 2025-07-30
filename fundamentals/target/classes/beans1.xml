@@ -1,0 +1,72 @@
+<!--beans tag validate the bean tag created inside it, bean tags are storeed inside the spring-beans.xsd  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+ <!-- bean definitions here     we have to give f
+ ile location as follows -->
+ 
+  <!-- while creating an object inject the dependency values for thisusing setter method internally 
+   when use property tage it use setter method to inject values so the class should need to have stter method 
+  
+    -->
+    
+    
+ <!--passing an object to as an dependency injection it creates multipleobjects
+  outer bean  and inner bean ,,
+  inner bean creats objects while both class object creating and injecting dependency values this is bad 
+  another approach follows to create the common sharing object only once then pass the object refrence in required places 
+ so that we can avoid multiple inner bean creation 
+ --> 
+ 
+ 
+ <bean id="s1" class="dependency.obj.injection.Student">
+ <property name="id" value="2"></property>
+ <property name="add">
+ <bean class="dependency.obj.injection.Address" ></bean>
+ </property>
+ </bean>
+ 
+ 
+ <bean id="s2" class="dependency.obj.injection.Student1">
+ <property name="id" value="100"></property>
+ <property name="add1">
+ <bean class="dependency.obj.injection.Address"></bean>
+ </property>
+  </bean>
+	
+ 
+ 
+ 
+ 
+ <!-- another approach 
+ 
+    the way it creates objects only once and sharing the reference only for 
+    dependency injection, so that we can avoid multiple object creation and save memory
+ -->
+ 
+ 
+ <!--
+	
+	
+ 
+ <bean id="commonobj" class="dependency.obj.injection.Address"></bean>
+ 
+  <bean id="s1" class="dependency.obj.injection.Student">
+ <property name="id" value="2"></property>
+ <property name="add" ref="commonobj"></property>
+ </bean>
+ 
+ 
+ <bean id="s2" class="dependency.obj.injection.Student1">
+ <property name="id" value="100"></property>
+ <property name="add1" ref="commonobj"></property>
+ </bean>
+ 
+   -->
+   
+   </beans>
+   
+ 

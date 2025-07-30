@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--beans tag validate the bean tag created inside it, bean tags are storeed inside the spring-beans.xsd  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+ <!-- bean definitions here     we have to give file location as follows -->
+ 
+  <!-- create objects and inject dependency values- using setter method -->
+    <bean id="std1" class="dependency.set.cons.injection.Student">
+    <property name="sname" value="siva"></property>
+    <property name="id" value="1"></property>
+    </bean>
+    
+     <!--> create objects and inject dependency values using setter method-->
+    <bean id="s2" class="dependency.set.cons.injection.Student">
+    <property name="sname" value="ram"></property>
+    <property name="id" value="2"></property>
+    </bean>
+    
+     <!-- create objects and inject dependency values using constructor,-->
+     <!-- order matter lot while passing,-->
+     <bean id="u1" class="dependency.set.cons.injection.Userinfo">
+     <constructor-arg name="username" value="siva"></constructor-arg>
+     <constructor-arg name="id" value="1"></constructor-arg>
+     </bean>
+     
+    <!-- create objects and inject dependency values using  one argument constructor,-->
+    <bean id="u2" class="dependency.set.cons.injection.Userinfo">
+    <constructor-arg name="id" value="3"></constructor-arg>
+    </bean>
+ 
+ 
+ 
+ 
+</beans>

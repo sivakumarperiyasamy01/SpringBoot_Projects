@@ -6,11 +6,18 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- bean definitions here     we have to give file location as follows -->
+
+ <!-- bean definitions here     we have to give file location as follows -->
+   
     
-    
+    <!-- object created without dependency injection-->
+      <!-- object created without dependency injection and  interface reference-->
     <bean id="sim"
-		class="inversionofcontrol.Vodafone"></bean>
+		class="inversionofcontrol.Vodafone"></bean>	
+   
+    
+    
+    
     
 
 </beans>
