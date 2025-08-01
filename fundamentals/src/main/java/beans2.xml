@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+      
+      <bean id="add1" class="loosecoupling.Address1"></bean>
+      <bean id="add2" class="loosecoupling.Address2"></bean>
+      
+      <bean id="st1" class="loosecoupling.Student">
+      <property name="name" value="siva"></property>
+      <property name="id" value="1"></property>
+      <property name="add" ref="add2"></property>
+      </bean>  
+        
+        
+        
+        
+ </beans>
