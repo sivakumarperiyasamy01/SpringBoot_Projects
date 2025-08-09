@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+		
+	
+	<!-- internally it work like this to create an object using student class
+		Student s1= new Student()
+		s1.setName("siva")
+		s1.setInterstedCourse("java")
+		s1.setHobby("cricket")
+	-->
+	
+	<!-- injecting literal dependency values using propery tag- setter method 
+		<bean id="s1" class="literalAnnotations.Student">
+		<property name="name" value="siva"></property>
+		<property name="interstedCourse" value="java"></property>
+		<property name="Hobby" value="cricket"></property>
+		</bean>	
+	-->	
+	
+	<!-- inject literal dependcy values using property file    
+	
+		<context:property-placeholder location="classpath:student.properites" /> 
+	to know spring from where im loading this properties file
+	
+	
+		<bean id="s1" class="literalAnnotations.Student">
+		<property name="name" value="${Student.name}"></property>
+		<property name="interstedCourse" value="${Student.interstedCourse}"></property>
+		<property name="Hobby" value="${Student.Hobby}"></property>
+		</bean>	
+	-->
+	
+	
+	<!-- to use annotations to inject dependency values -->
+	
+	<context:annotation-config/> 
+	<!-- this is manadatory tag for to activate annotations-->
+	
+	
+	<context:property-placeholder location="classpath:student.properites" /> 
+	
+	<!--to know spring from where im loading this properties file-->
+	
+    <bean id="s1" class="literalAnnotations.Student"></bean>	
+	
+		
+		
+
+		
+</beans>

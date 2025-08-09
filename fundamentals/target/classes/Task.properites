@@ -1,0 +1,3 @@
+DatabaseConnection.url=jdbc:mysql://localhost:3306/school
+DatabaseConnection.uname=root
+DatabaseConnection.pass=siva@123
