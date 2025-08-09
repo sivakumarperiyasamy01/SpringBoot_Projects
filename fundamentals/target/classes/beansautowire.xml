@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+
+
+<!-- when i got error like dowlnoading external resource is disalbed 
+do following stpes 
+
+The “Downloading external resources is disabled” error typically occurs in 
+Eclipse when working with Maven projects or Hibernate configuration files. 
+Here’s how you can fix it depending on the context:
+
+- Go to Window > Preferences in Eclipse.
+- Navigate to Maven.
+- Check the box for “Download artifact javadoc”.
+- Click Apply & Close.
+
+This enables Eclipse to fetch external resources like DTDs and schemas used in Hibernate configuration files.
+
+-->
+
+<!-- 
+	
+pros and cons
+
+if the the ioc container has more than 200 beans use manual dependency injection like using property or constructor because it will cause debugging issue 
+ 1 to 10 dependecy object present then we can use autowiring	
+	
+	
+  before object creating for class first it will check any dependency injection
+  if its then it will check and inject and create objects inside ioc container with refrence variable
+	
+	 autowire type
+	 - by name ( dependency reference name should match the  dependency object)
+	 - by default ( it check the reference type)
+	 - by constructor ( autowire using constructor 
+-->
+
+
+<!-- autowire by name
+
+  -internally ioc container creates
+	-  Heart hrr= new Heart();
+	-  Human human1= new Human();
+	-  human1.setHeart(hrr);
+
+
+  - while creating Human class object any dependency present in humna class meeting 
+        auto wire="by name"
+	criteria, inject those beans to thier respective dependency
+	
+  - Heart class rererence varaible("heart") name and bean id name("heart") matched
+  - If null pointer exception
+  
+  
+ 
+-->
+
+<!--
+ <bean id="hr" class="autowire.Heart"></bean>  Heart reference variable name and bean id name need to match
+   
+   <bean id="human1" class="autowire.Human" autowire="byName"></bean>
+   
+-->
+
+
+<!-- autowire by type
+
+  -internally ioc container creates
+	-  Heart hrr= new Heart();
+	-  Human human1= new Human();
+	-  human1.setHeart(hrr);
+
+
+  - while creating Human class object any dependency present in human class meeting 
+        auto wire="by type"
+	criteria, inject those beans to thier respective dependency
+	
+  - Heart class reference variable("heart") name and bean id name("heart") matched
+  - If null pointer exception
+	
+	
+	
+<bean id="hrr" class="autowire.Heart"></bean>  
+<bean id="human1" class="autowire.Human" autowire="byType"></bean> the type of variable and type of the bean matched
+
+-->
+
+
+<!-- autowire by constructor
+
+  -internally ioc container creates
+	-  Heart hrr= new Heart();
+	-  Human human1= new Human(hrr);
+
+
+  - while creating Human class object any dependency present in human class meeting 
+        auto wire="by type"
+	criteria, inject those beans to thier respective dependency
+	
+  - Heart class reference variable("heart") name and bean id name("heart") matched
+  - If null pointer exception
+	
+-->
+
+
+
+<!-- autowire using constructor
+	
+<bean id="hrr" class="autowire.Heart"></bean>  
+<bean id="human1" class="autowire.Human" autowire="constructor"></bean> do the injection using constructor
+
+-->
+
+
+
+<!--  autowiring using autowire annotations instead of constructor-->
+<context:annotation-config/>
+<!--
+	
+	The <context:annotation-config/> tag in Spring XML configuration is used 
+	to enable support for common annotations 
+	like @Autowired, @Required, @PostConstruct, and @PreDestroy on beans 
+	that are already defined in the application context
+-->
+
+
+<bean id= "hr" class="autowire.Heart"></bean> 
+<!-- by type it fails
+<bean id="hrrgh" class="autowire.Heart"></bean> 
+--> 
+ 
+<bean id="human1" class="autowire.Human" ></bean>
+
+</beans>
+
+
+
