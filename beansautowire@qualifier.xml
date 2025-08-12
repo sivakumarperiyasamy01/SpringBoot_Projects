@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+		
+
+
+
+	
+	
+	
+<!--autowire by name
+<bean id="hr" class="auotwireannotation2.Brain"></bean>	
+<bean id="human" class="auotwireannotation2.Child" autowire="byName"></bean>
+-->	
+	
+<!--autowire by type
+<bean id="hrr" class="auotwireannotation2.Brain"></bean>	
+<bean id="human" class="auotwireannotation2.Child" autowire="byType"></bean>
+-->
+
+<!--autowire by constructor
+<bean id="hrr" class="auotwireannotation2.Brain"></bean>	
+<bean id="human" class="auotwireannotation2.Child" autowire="constructor"></bean>
+-->
+
+
+<context:annotation-config/>
+
+<!-- using autowire annotation above the dependency or setter or constructor-->
+<bean id="hr" class="auotwireannotation2.Brain"></bean>	
+<bean id="hrr" class="auotwireannotation2.Brain"></bean>	
+<bean id="hr2" class="auotwireannotation2.Brain"></bean>
+<bean id="human" class="auotwireannotation2.Child" ></bean>
+
+
+	
+</beans>
