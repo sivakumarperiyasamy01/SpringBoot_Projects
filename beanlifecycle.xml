@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--beans tag validate the bean tag created inside it, bean tags are storeed inside the spring-beans.xsd  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--<context:annotation-config/> -->
+
+
+<bean id="s1" class="beanLifecycle.Student" >
+<property name="url" value="jdbc:mysql://localhost:3306/school"></property>
+<property name="username" value="root"></property>
+<property name="pass" value="siva@123"></property>
+
+</bean>
+
+<context:annotation-config/>
+
+<!--
+	instead of using 
+	<context:annotation-config/>
+	we can use following to activate @destroy and @postconstruct annotations
+-->
+
+
+
+<!--
+<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>	
+-->
+
+
+
+        	
+</beans>
