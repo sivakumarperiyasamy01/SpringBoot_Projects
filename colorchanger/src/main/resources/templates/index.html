@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	
+</head>
+
+<body>
+	<h1 th:text="${enteredname}">Default Name</h1>
+	
+	<form action="/input" method="get">
+		<input type="text" name="namevalue" required>
+		<button type="submit">click</button>	
+	</form>
+
+</body>
+</html>
+
